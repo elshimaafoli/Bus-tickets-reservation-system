@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Login</title>
+        <meta charset="UTF-8">
+        <meta name="description" content="loginform"/> 
+        <link rel="StyleSheet" href="/static/stylesheets/index.css"/>
+        <script>
+          function showAlert() {
+              alert ("Wrong password !");
+            }
+        </script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="left">
+              <div class="header">
+                <h1 class="animation a1">Welcome Back</h1>
+                <h3 class="animation a2">Log in to your account using username and password</h3>
+              </div>
+              <form method="post" action="/login" >
+                <input type="text" class="form-field animation a3" placeholder="UserName"  name="username">
+                <input type="password" class="form-field animation a4" placeholder="Password" name="password">
+                <br>
+                <input type="submit" id="bot1" class="animation a6" value="Submit">
+                <input id="bot2" type="reset" value="clear">
+              </form>
+            </div>
+            <div class="right"></div>
+          </div>
+          
+    </body>
+</html>

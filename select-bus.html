@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Select-Bus</title>
+        <meta charset="UTF-8">
+        <meta name="description" content="Select-Bud"/> 
+        <link rel="StyleSheet" href="/static/stylesheets/select-bus.css"/>
+        
+    </head>
+    <body>
+        <div class="container" id="container">
+        	<div class="form-container select-bus-container" >
+		        <form method="post" action="/select-bus" class="form1">
+                    <br><br>
+			        <h1>Select Bus</h1>
+                    <br>
+                    <label for="st">Station</label>
+                    <input id="st" list="Station" name="Station" >
+                    <datalist id="Station">
+                        {{range .Stations}}
+                            <option value={{.}}></option>
+                        {{end}}
+                    </datalist> 
+                    
+                    <label for="ds">Destination</label>
+                    <input id="ds" list="Destination" name="Destination" >
+                    <datalist id="Destination">
+                        {{range .Stations}}
+                            <option value={{.}}></option>
+                        {{end}}
+                    </datalist> 
+                    <br>
+                    <input class="bot" id="bot1" type="submit" value="OK">
+		        </form>
+	        </div>
+            <br><hr/>
+            <div class="form-container all-buses-container" >
+			    <h1>All available buses</h1>
+                <br>
+                <table class="tab" border="1">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Station</th>
+                            <th>Destination</th>
+                            <th>Time</th>
+                            <th>Book</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{ range .Buses}}
+                        <tr>
+                            <td>{{.Id}}</td>
+                            <td>{{.Start_city}}</td>
+                            <td>{{.Destination}}</td>
+                            <td>{{.Launch_time}}</td>
+                            <td>
+                                <form method="post" action="/book">
+                                    <input type="hidden"  name="Station" , value={{.Start_city}}>
+                                    <input type="hidden" name="Destination" , value={{.Destination}}>
+                                    <input type="hidden" name="BusNumber" , value={{.Id}}>
+                                    <input type="hidden"id="ds" name="Time" , value={{.Launch_time}}>
+                                    <input class="bott" type="submit" value="Confirm" >
+                                </form>
+                            </td>
+                        </tr>
+                        {{end}}
+                    </tbody>
+                </table>
+        	</div>   
+        </div>
+    </body>
+</html>

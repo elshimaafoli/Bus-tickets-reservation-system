@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Select-Bus</title>
+        <meta charset="UTF-8">
+        <meta name="description" content="Ticket"/> 
+        <link rel="StyleSheet" href="/static/stylesheets/ticket.css"/>
+        <script>
+            function showAlert() {
+              alert ("successflly booked !");
+            }
+            </script>
+    </head>
+    <body>
+        <div class="container" id="container">
+            <form onsubmit="return showAlert()" method="post" action="/confirm" >
+                <h1>Make Your Reservation </h1>
+                <label for="ID" style="margin-left: -75%;">ID:</label>
+                <input type="text" id="ID" name="ID" value={{.Id}} disabled >
+
+                <label for="Time" style="margin-left: -72%;">Time:</label>
+                <input type="text" id="Time" name="Time" value={{.Time}} disabled >
+                <label for="Station" style="margin-left: -69%;">Station:</label>
+                <input type="text" id="Station" name="Station" value={{.Station}} disabled >
+                
+                <label for="Destination" style="margin-left: -64%;">Destination:</label>
+                <input type="text" id="Destination" name="Destination" value={{.Destination}} disabled >
+                
+                <label for="Bus-Number" style="margin-left: -63%;">Bus Number:</label>
+                <input type="hidden" id="Bus-Number" name="Bus-Number" value={{.BusNumber}}>
+                <input type="text" id="Bus-Number" name="Bus-Number" value={{.BusNumber}} disabled >
+
+                <label for="Seat-Number" style="margin-left: -62%;">Seat Number:</label>
+                <input type="hidden" id="Seat-Number" name="Seat-Number" value={{.SeatNumber}}>
+                <input type="text" id="Seat-Number" name="Seat-Number" value={{.SeatNumber}} disabled >
+
+                <br>
+                <input id="bot" type="submit" value="Confirm">
+                <br><br>
+            </form>
+        </div>
+    </body>
+</html>

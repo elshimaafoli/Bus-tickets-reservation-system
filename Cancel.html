@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Cancel Reservation</title>
+        <meta charset="UTF-8">
+        <meta name="description" content="Ticket"/> 
+        <link rel="StyleSheet" href="/static/stylesheets/Cancel.css"/>
+    </head>
+    <body>
+        <div class="container" id="container">
+            <form method="post" action="/confirm-cancellation" >
+                <h1>Cancel Your Reservation </h1>
+                
+                <label for="Bus-Number" style="margin-left: -61%;">Bus Number:</label>
+                <input type="number"  id="Bus-Number" name="Bus-Number" required>
+
+                <label for="Seat-Number" style="margin-left: -61%;">Seat Number:</label>
+                <input type="number" id="Seat-Number" name="Seat-Number" required>
+
+                <br>
+
+                <input id="bot" type="submit" value="Confirm">
+                <br><br>
+            </form>
+        </div>
+    </body>
+</html>
